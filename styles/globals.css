@@ -1,4 +1,3 @@
-/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input {
-  color: black !important; /* Stellen Sie sicher, dass die Farbe erzwungen wird */
+  color: black !important;
 }
 
 input::placeholder {
