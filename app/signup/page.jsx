@@ -1,11 +1,11 @@
-"use client"; // Diese Zeile oben hinzufügen, um die Komponente als Client-Komponente zu markieren
+"use client";
 
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Label } from '@/components/ui/label';
-import Input from '@/components/ui/input';
-import Button from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 export default function SignUp() {
@@ -15,7 +15,6 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    // eslint-disable-next-line no-undef
     setTimeout(() => {
       router.push('/');
     }, 5000);
@@ -26,7 +25,7 @@ export default function SignUp() {
       <header className="sticky top-0 z-50 bg-white backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="/">
-            <Image src="/logo.png" alt="APIarist Logo" className="h-10 w-auto" width={40} height={40} />
+            <Image src="/logo.png" alt="APIarist Logo" width={150} height={40} className="h-10 w-auto" />
           </Link>
           <nav className="hidden space-x-4 md:flex">
             <a className="text-sm font-medium text-black hover:underline" href="/#features">Features</a>

@@ -1,4 +1,3 @@
-// /Users/lukas/Documents/Webseite/Apiarist 2/website/components/ui/input.tsx
 import React from 'react';
 
 interface InputProps {
@@ -8,11 +7,5 @@ interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = ({ type, placeholder, className }) => {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      className={`border rounded py-2 px-3 ${className}`}
-    />
-  );
+  return <input type={type} placeholder={placeholder} className={`px-4 py-2 border rounded ${className}`} />;
 };

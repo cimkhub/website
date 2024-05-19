@@ -1,20 +1,17 @@
-'use client'; // Dies macht die Komponente zu einer Client-Komponente
-
 import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: () => void;
   className?: string;
+  variant?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, type = 'button', onClick, className }) => {
+export const Button: React.FC<ButtonProps> = ({ children, type = 'button', className, variant }) => {
   return (
     <button
       type={type}
-      onClick={onClick}
-      className={`px-4 py-2 font-semibold text-white bg-blue-500 hover:bg-blue-700 rounded ${className}`}
+      className={`px-4 py-2 font-medium rounded ${variant === 'primary' ? 'bg-blue-500 text-white' : 'bg-gray-800 text-white'} ${className}`}
     >
       {children}
     </button>

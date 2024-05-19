@@ -9,7 +9,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="/">
-            <Image src="/logo.png" alt="APIarist Logo" width={100} height={40} />
+            <Image src="/logo.png" alt="APIarist Logo" width={150} height={40} className="h-10 w-auto" />
           </Link>
           <nav className="hidden space-x-4 md:flex">
             <a className="text-sm font-medium text-black hover:underline" href="#features">Features</a>
