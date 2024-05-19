@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import Input from '@/components/ui/input';
+import Button from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function SignUp() {
   const [submitted, setSubmitted] = useState(false);
@@ -14,6 +15,7 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    // eslint-disable-next-line no-undef
     setTimeout(() => {
       router.push('/');
     }, 5000);
@@ -24,7 +26,7 @@ export default function SignUp() {
       <header className="sticky top-0 z-50 bg-white backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="/">
-            <img src="/logo.png" alt="APIarist Logo" className="h-10 w-auto" />
+            <Image src="/logo.png" alt="APIarist Logo" className="h-10 w-auto" width={40} height={40} />
           </Link>
           <nav className="hidden space-x-4 md:flex">
             <a className="text-sm font-medium text-black hover:underline" href="/#features">Features</a>
@@ -77,7 +79,7 @@ export default function SignUp() {
           <div className="fixed inset-0 flex items-center justify-center bg-gray-900/50 backdrop-blur-sm z-50">
             <div className="bg-white rounded-lg p-8 max-w-md w-full space-y-4 text-center shadow-lg">
               <h2 className="text-2xl font-bold">Thank You!</h2>
-              <p className="text-gray-500">We've received your sign up request. We'll be in touch soon.</p>
+              <p className="text-gray-500">We&apos;ve received your sign up request. We&apos;ll be in touch soon.</p>
               <Button onClick={() => router.push('/')}>Close</Button>
             </div>
           </div>

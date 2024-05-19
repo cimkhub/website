@@ -1,4 +1,6 @@
+// /Users/lukas/Documents/Webseite/Apiarist 2/website/app/page.tsx
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -8,7 +10,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="/">
-            <img src="/logo.png" alt="APIarist Logo" className="h-10 w-auto" />
+            <Image src="/logo.png" alt="APIarist Logo" width={150} height={40} />
           </Link>
           <nav className="hidden space-x-4 md:flex">
             <a className="text-sm font-medium text-black hover:underline" href="#features">Features</a>
@@ -36,22 +38,24 @@ export default function Home() {
                 <Button className="bg-gray-800 text-white border-none">Learn More</Button>
               </div>
             </div>
-            <img
+            <Image
               alt="APIarist"
               className="mx-auto w-full aspect-square overflow-hidden rounded-xl object-cover"
-              height="500"
+              height={500}
               src="/placeholder1.png"
-              width="500"
+              width={500}
             />
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white" id="features">
           <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="relative mx-auto border border-black">
-              <img
+              <Image
                 alt="Share API"
                 className="max-h-full max-w-full object-contain"
                 src="/placeholder2.png"
+                width={500}
+                height={500}
               />
             </div>
             <div className="space-y-4">
@@ -75,10 +79,12 @@ export default function Home() {
               </p>
             </div>
             <div className="relative mx-auto border border-black">
-              <img
+              <Image
                 alt="Choose Parameters"
                 className="max-h-full max-w-full object-contain"
                 src="/placeholder3.png"
+                width={500}
+                height={500}
               />
             </div>
           </div>
@@ -86,10 +92,12 @@ export default function Home() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white" id="pricing">
           <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="relative mx-auto border border-black">
-              <img
+              <Image
                 alt="Receive Data"
                 className="max-h-full max-w-full object-contain"
                 src="/placeholder4.png"
+                width={500}
+                height={500}
               />
             </div>
             <div className="space-y-4">
@@ -114,7 +122,7 @@ export default function Home() {
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input className="max-w-lg flex-1 text-black" placeholder="Enter your email" type="email" />
-                <Button type="submit" />
+                <Button type="submit">Sign Up</Button>
               </form>
             </div>
           </div>
