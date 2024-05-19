@@ -1,8 +1,7 @@
-// /Users/lukas/Documents/Webseite/Apiarist 2/website/app/page.tsx
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -10,7 +9,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="flex items-center gap-2" href="/">
-            <Image src="/logo.png" alt="APIarist Logo" width={150} height={40} />
+            <Image src="/logo.png" alt="APIarist Logo" width={100} height={40} />
           </Link>
           <nav className="hidden space-x-4 md:flex">
             <a className="text-sm font-medium text-black hover:underline" href="#features">Features</a>
@@ -122,7 +121,7 @@ export default function Home() {
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex space-x-2">
                 <Input className="max-w-lg flex-1 text-black" placeholder="Enter your email" type="email" />
-                <Button type="submit">Sign Up</Button>
+                <Button type="submit">Submit</Button>
               </form>
             </div>
           </div>

@@ -1,4 +1,5 @@
-// /Users/lukas/Documents/Webseite/Apiarist 2/website/components/ui/button.tsx
+'use client'; // Dies macht die Komponente zu einer Client-Komponente
+
 import React from 'react';
 
 interface ButtonProps {
@@ -13,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({ children, type = 'button', onCli
     <button
       type={type}
       onClick={onClick}
-      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${className}`}
+      className={`px-4 py-2 font-semibold text-white bg-blue-500 hover:bg-blue-700 rounded ${className}`}
     >
       {children}
     </button>
