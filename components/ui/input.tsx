@@ -6,12 +6,18 @@ interface InputProps {
   type: string;
   placeholder?: string;
   className?: string;
+  id?: string;
+  required?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ type, placeholder, className }) => {
+export const Input: React.FC<InputProps> = ({ type, placeholder, className, id, required }) => {
   return (
-    <input type={type} placeholder={placeholder} className={className} />
+    <input
+      type={type}
+      placeholder={placeholder}
+      className={className}
+      id={id}
+      required={required}
+    />
   );
 };
-
-export default Input;
