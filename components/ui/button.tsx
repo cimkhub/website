@@ -4,14 +4,22 @@ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
   className?: string;
+  type?: "button" | "submit" | "reset";
+  variant?: "outline" | "default";
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, type = "button", className, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, type = "button", variant = "default", onClick }) => {
+  const baseStyles = "py-2 px-4 rounded font-bold";
+  const variantStyles = variant === "outline" ? "border border-blue-500 text-blue-500 bg-white" : "bg-blue-500 text-white";
+
   return (
-    <button type={type} className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${className}`} onClick={onClick}>
+    <button
+      type={type}
+      className={`${baseStyles} ${variantStyles} ${className}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
