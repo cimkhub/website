@@ -87,7 +87,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white" id="pricing">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="relative mx-auto border border-black">
               <Image
@@ -107,7 +107,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+        <section className="w-full pt-6 pb-12 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 bg-gray-100">
           <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-white">Step 4</div>
@@ -216,7 +216,7 @@ export default function Home() {
   );
 }
 
-function CheckIcon(props) {
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -235,7 +235,7 @@ function CheckIcon(props) {
   );
 }
 
-function XIcon(props) {
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
