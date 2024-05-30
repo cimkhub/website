@@ -146,15 +146,12 @@ export default function Home() {
                 </div>
                 <div className="grid gap-4">
                   <div className="flex items-center gap-2">
-                    <CheckIcon className="h-5 w-5 fill-green-500" />
                     <span>10 API calls per month</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <XIcon className="h-5 w-5 fill-red-500" />
                     <span>Save API outputs in the cloud</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <XIcon className="h-5 w-5 fill-red-500" />
                     <span>Set up new APIs</span>
                   </div>
                 </div>
@@ -171,15 +168,12 @@ export default function Home() {
                 </div>
                 <div className="grid gap-4">
                   <div className="flex items-center gap-2">
-                    <CheckIcon className="h-5 w-5 fill-green-500" />
                     <span>Unlimited API calls per month</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <XIcon className="h-5 w-5 fill-red-500" />
                     <span>Save API outputs in the cloud</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <XIcon className="h-5 w-5 fill-red-500" />
                     <span>Set up new APIs</span>
                   </div>
                 </div>
@@ -214,44 +208,5 @@ export default function Home() {
         © APIarist 2024
       </footer>
     </>
-  );
-}
-
-function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M20 6 9 17l-5-5" />
-    </svg>
-  );
-}
-
-function XIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
-    </svg>
   );
 }
