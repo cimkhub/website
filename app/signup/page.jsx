@@ -10,7 +10,7 @@ export default function SignUp() {
   const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => {
