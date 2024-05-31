@@ -10,7 +10,7 @@ export default function SignUp() {
   const [submitted, setSubmitted] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => {
@@ -136,7 +136,7 @@ export default function SignUp() {
             <div className="bg-white rounded-lg p-8 max-w-md w-full space-y-4 text-center shadow-lg">
               <h2 className="text-2xl font-bold">Thank You!</h2>
               <p className="text-gray-500">We've received your sign up request. We'll be in touch soon.</p>
-              <Button onClick={() => router.push('/')}>Close</Button>
+              <CustomButton onClick={() => router.push('/')}>Close</CustomButton>
             </div>
           </div>
         )}

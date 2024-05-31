@@ -4,6 +4,25 @@ import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import React from 'react';
 
+interface ButtonProps {
+  onClick?: () => void;
+  className?: string;
+  children: React.ReactNode;
+  type?: "button" | "submit" | "reset";
+}
+
+const CustomButton: React.FC<ButtonProps> = ({ onClick, className, children, type = "button" }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${className}`}
+      type={type}
+    >
+      {children}
+    </button>
+  );
+};
+
 export default function Home() {
   return (
     <>
@@ -156,9 +175,9 @@ export default function Home() {
                   </div>
                 </div>
                 <Link href="/signup">
-                  <Button className="mt-6" variant="outline">
+                  <CustomButton className="mt-6" variant="outline">
                     Get Started
-                  </Button>
+                  </CustomButton>
                 </Link>
               </div>
               <div className="flex flex-col rounded-lg border border-gray-200 p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950" style={{ backgroundColor: '#f3f4f6' }}>
@@ -178,9 +197,9 @@ export default function Home() {
                   </div>
                 </div>
                 <Link href="/signup">
-                  <Button className="mt-6" variant="outline">
+                  <CustomButton className="mt-6" variant="outline">
                     Get Started
-                  </Button>
+                  </CustomButton>
                 </Link>
               </div>
             </div>
@@ -198,7 +217,7 @@ export default function Home() {
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
               <Link href="/signup">
-                <Button type="submit">Sign Up</Button>
+                <CustomButton type="submit">Sign Up</CustomButton>
               </Link>
             </div>
           </div>
