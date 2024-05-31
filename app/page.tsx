@@ -23,6 +23,36 @@ const CustomButton: React.FC<ButtonProps> = ({ onClick, className, children, typ
   );
 };
 
+interface FeatureProps {
+  title: string;
+  description: string;
+  step: number;
+  image: string;
+}
+
+const FeatureSection: React.FC<FeatureProps> = ({ title, description, step, image }) => {
+  return (
+    <section className={`w-full py-12 md:py-24 lg:py-32 ${step % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}>
+      <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+        <div className={`relative mx-auto border border-black ${step % 2 === 0 ? 'order-last lg:order-first' : ''}`}>
+          <Image
+            alt={title}
+            className="max-h-full max-w-full object-contain"
+            src={image}
+            width={500}
+            height={500}
+          />
+        </div>
+        <div className="space-y-4">
+          <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-white">Step {step}</div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">{title}</h2>
+          <p className="text-gray-500 dark:text-gray-400 md:text-xl">{description}</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   return (
     <>
@@ -37,7 +67,7 @@ export default function Home() {
             <a className="text-sm font-medium text-black hover:underline" href="#contact">Contact</a>
           </nav>
           <Link href="/signup">
-            <Button>Try for Free</Button>
+            <CustomButton>Try for Free</CustomButton>
           </Link>
         </div>
       </header>
@@ -51,9 +81,9 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Link href="/signup">
-                  <Button>Try for Free</Button>
+                  <CustomButton>Try for Free</CustomButton>
                 </Link>
-                <Button className="bg-gray-800 text-white border-none">Learn More</Button>
+                <CustomButton className="bg-gray-800 text-white border-none">Learn More</CustomButton>
               </div>
             </div>
             <Image
@@ -65,90 +95,30 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white" id="features">
-          <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="relative mx-auto border border-black">
-              <Image
-                alt="Share API"
-                className="max-h-full max-w-full object-contain"
-                src="/placeholder2.png"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-white">Step 1</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">Share the API Documentation Link</h2>
-              <p className="text-gray-500 dark:text-gray-400 md:text-xl">
-                Provide the API documentation link, and APIarist will automatically fetch the API schema and parameters.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100" id="testimonials">
-          <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-white">Step 2</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">
-                Choose Parameters in the Intuitive Interface
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 md:text-xl">
-                Select the parameters you need, and APIarist will generate the API request for you.
-              </p>
-            </div>
-            <div className="relative mx-auto border border-black">
-              <Image
-                alt="Choose Parameters"
-                className="max-h-full max-w-full object-contain"
-                src="/placeholder3.png"
-                width={500}
-                height={500}
-              />
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="relative mx-auto border border-black">
-              <Image
-                alt="Receive Data"
-                className="max-h-full max-w-full object-contain"
-                src="/placeholder4.png"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-white">Step 3</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">Receive Data in a Spreadsheet</h2>
-              <p className="text-gray-500 dark:text-gray-400 md:text-xl">
-                APIarist will fetch the data from the API and deliver it to you in a spreadsheet, ready for analysis.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="w-full pt-6 pb-12 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 bg-gray-100">
-          <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-white">Step 4</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">
-                Choose ready to use APIs from our Library
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 md:text-xl">
-                Our library contains hundreds of data APPs, all of which are already set up and ready for you to use. Just search for the right one.
-              </p>
-            </div>
-            <div className="relative mx-auto border border-black">
-              <Image
-                alt="Choose Parameters"
-                className="max-h-full max-w-full object-contain"
-                src="/placeholder3.png"
-                width={500}
-                height={500}
-              />
-            </div>
-          </div>
-        </section>
+        <FeatureSection
+          title="Share the API Documentation Link"
+          description="Provide the API documentation link, and APIarist will automatically fetch the API schema and parameters."
+          step={1}
+          image="/placeholder2.png"
+        />
+        <FeatureSection
+          title="Choose Parameters in the Intuitive Interface"
+          description="Select the parameters you need, and APIarist will generate the API request for you."
+          step={2}
+          image="/placeholder3.png"
+        />
+        <FeatureSection
+          title="Receive Data in a Spreadsheet"
+          description="APIarist will fetch the data from the API and deliver it to you in a spreadsheet, ready for analysis."
+          step={3}
+          image="/placeholder4.png"
+        />
+        <FeatureSection
+          title="Choose ready to use APIs from our Library"
+          description="Our library contains hundreds of data APPs, all of which are already set up and ready for you to use. Just search for the right one."
+          step={4}
+          image="/placeholder3.png"
+        />
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white" id="pricing">
           <div className="container mx-auto text-center">
             <div className="space-y-4">
